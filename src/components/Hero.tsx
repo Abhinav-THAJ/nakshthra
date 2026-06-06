@@ -16,7 +16,7 @@ export default function Hero() {
           priority
           className="object-cover object-center opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black md:from-black/40 md:via-transparent md:to-black" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto">
@@ -42,7 +42,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="text-gray-300 max-w-2xl text-base md:text-lg mb-12 font-light leading-relaxed"
+          className="text-gray-200 drop-shadow-lg max-w-2xl text-base md:text-lg mb-12 font-light leading-relaxed"
         >
           Discover our curated collection of extraordinary jewels. From pristine diamonds to heritage gold bridal masterpieces, designed for the world's most discerning tastes.
         </motion.p>

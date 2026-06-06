@@ -84,17 +84,15 @@ export default function ShopPage() {
       {/* Header */}
       <section className="pt-40 pb-12 px-6 border-b border-white/10">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 text-center md:text-left">
             <div>
-              <p className="text-gold-500 uppercase tracking-[0.3em] text-xs mb-4">Discover the Finest</p>
-              <h1 className="font-heading text-4xl md:text-6xl text-ivory">Masterpieces</h1>
+              <p className="text-gold-500 uppercase tracking-[0.3em] text-xs mb-4">Discover</p>
+              <h1 className="font-heading text-4xl md:text-6xl text-ivory">Our Collections</h1>
             </div>
-            <div className="flex gap-4">
+            <div className="flex items-center justify-center md:justify-end gap-4 w-full md:w-auto">
+              <span className="text-sm text-gray-500 uppercase tracking-widest hidden md:inline-block">Sort by:</span>
               <button className="flex items-center gap-2 text-xs uppercase tracking-widest text-ivory border border-white/20 px-6 py-3 hover:bg-white/5 transition-colors">
-                <Filter className="w-4 h-4" /> Filter
-              </button>
-              <button className="flex items-center gap-2 text-xs uppercase tracking-widest text-ivory border border-white/20 px-6 py-3 hover:bg-white/5 transition-colors">
-                Sort By <ChevronDown className="w-4 h-4" />
+                Featured <ChevronDown className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -171,7 +169,7 @@ export default function ShopPage() {
                 </div>
               ) : (
                 <>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-20">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-12 md:gap-x-12 md:gap-y-20">
                     {filteredProducts.map((product) => (
                       <Link href={`/product/${product.id}`} key={product.id} className="group cursor-pointer block">
                         <div className="relative aspect-square w-full overflow-hidden mb-6 bg-black border border-white/5">

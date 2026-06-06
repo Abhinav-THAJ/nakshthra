@@ -10,38 +10,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 
-const bestSellers = [
-  {
-    id: "bs1",
-    name: "Imperial Diamond Bangle",
-    price: "₹ 4,50,000",
-    image: "/images/products/diamond_bangle.png",
-    category: "Diamonds"
-  },
-  {
-    id: "bs2",
-    name: "Royal 22K Men's Ring",
-    price: "₹ 1,25,000",
-    image: "/images/products/gold_ring.png",
-    category: "Gold"
-  },
-  {
-    id: "bs3",
-    name: "Eternity Diamond Pendant",
-    price: "₹ 2,80,000",
-    image: "/images/products/diamond_pendant.png",
-    category: "Diamonds"
-  },
-  {
-    id: "bs4",
-    name: "Heritage Bridal Set",
-    price: "₹ 12,80,000",
-    image: "/images/products/bridal_set.png",
-    category: "Bridal"
-  },
-];
+import { Product } from "@/lib/services/odoo-products";
 
-export default function BestSellers() {
+interface BestSellersProps {
+  products: Product[];
+}
+
+export default function BestSellers({ products }: BestSellersProps) {
   return (
     <section className="py-24 bg-[#050505] text-ivory border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -71,7 +46,7 @@ export default function BestSellers() {
             }}
             className="!pb-12"
           >
-            {bestSellers.map((product) => (
+            {products.map((product) => (
               <SwiperSlide key={product.id}>
                 <Link href={`/product/${product.id}`} className="group block cursor-pointer">
                   <div className="relative aspect-square w-full overflow-hidden mb-6 bg-black border border-white/5">

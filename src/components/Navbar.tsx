@@ -31,15 +31,6 @@ export default function Navbar() {
   }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() || 0;
-    // Don't hide navbar if menu is open
-    if (isMenuOpen) return;
-    
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
     setIsScrolled(latest > 50);
   });
 
@@ -55,13 +46,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
+      <header
         className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
           isScrolled || isMenuOpen ? "bg-black/90 backdrop-blur-md border-b border-white/10" : "bg-transparent"
         }`}
@@ -83,12 +68,7 @@ export default function Navbar() {
           </div>
 
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center z-50" onClick={() => setIsMenuOpen(false)}>
-            <span className="font-heading text-2xl md:text-3xl tracking-widest text-gold-500 uppercase">
-              Nakshathra
-            </span>
-            <span className="text-[0.6rem] tracking-[0.3em] uppercase text-gray-400 mt-1">
-              Gold & Diamonds
-            </span>
+            <img src="/logo.png" alt="Nakshathra Logo" className="h-12 md:h-16 w-auto object-contain" />
           </Link>
 
           {/* Right Links */}
@@ -112,7 +92,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Full Screen Mega Menu */}
       <AnimatePresence>

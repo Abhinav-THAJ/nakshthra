@@ -8,12 +8,16 @@ import LifestyleSection from "@/components/LifestyleSection";
 import BestSellers from "@/components/BestSellers";
 import ShowroomCTA from "@/components/ShowroomCTA";
 
-export default function Home() {
+import { getBestSellers } from "@/lib/services/odoo-products";
+
+export default async function Home() {
+  const bestSellers = await getBestSellers();
+
   return (
     <main className="min-h-screen bg-black selection:bg-gold-500/30 selection:text-gold-200">
       <Navbar />
       <Hero />
-      <BestSellers />
+      <BestSellers products={bestSellers} />
       <FeaturedCollections />
       <TrendingProducts />
       <GoldRateWidget />

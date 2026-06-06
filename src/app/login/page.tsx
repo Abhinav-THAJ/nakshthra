@@ -25,10 +25,9 @@ export default function LoginPage() {
         
         {/* Brand Overlay */}
         <div className="absolute bottom-12 left-12 z-10">
-          <Link href="/" className="font-heading text-4xl text-ivory tracking-widest uppercase">
-            Nakshathra
+          <Link href="/">
+            <img src="/logo.png" alt="Nakshathra Logo" className="h-16 w-auto object-contain" />
           </Link>
-          <p className="text-gold-500 text-xs tracking-[0.4em] uppercase mt-2">Gold & Diamonds</p>
         </div>
       </div>
 

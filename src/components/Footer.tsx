@@ -11,12 +11,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="col-span-1 lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="font-heading text-2xl tracking-widest text-gold-500 uppercase block">
-                Nakshathra
-              </span>
-              <span className="text-[0.6rem] tracking-[0.3em] uppercase text-gray-500">
-                Gold & Diamonds
-              </span>
+              <img src="/logo.png" alt="Nakshathra Logo" className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed mb-8 max-w-sm">
               Crafting eternity since inception. Experience the epitome of luxury, heritage, and uncompromising craftsmanship with our exclusive collections.

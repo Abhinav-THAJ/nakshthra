@@ -33,14 +33,16 @@ export default function TrendingProducts() {
   return (
     <section className="py-32 bg-[#0a0a0a] text-ivory">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 md:gap-8 text-center md:text-left">
           <div>
             <h2 className="text-gold-500 uppercase tracking-[0.3em] text-sm mb-4">Exceptional Masterpieces</h2>
             <h3 className="font-heading text-4xl md:text-5xl">Trending Now</h3>
           </div>
-          <Link href="/shop" className="text-sm tracking-widest uppercase flex items-center gap-2 hover:text-gold-500 transition-colors border-b border-white/20 pb-1 hover:border-gold-500">
-            View All Collection <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex justify-center md:justify-end mt-4 md:mt-0">
+            <Link href="/shop" className="text-sm tracking-widest uppercase flex items-center gap-2 hover:text-gold-500 transition-colors border-b border-white/20 pb-1 hover:border-gold-500">
+              View All Collection <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">

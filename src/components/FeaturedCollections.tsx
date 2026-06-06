@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const collections = [
   {
@@ -29,17 +30,16 @@ export default function FeaturedCollections() {
   return (
     <section className="py-32 bg-black text-ivory relative">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-6 md:gap-8 text-center md:text-left">
           <div className="max-w-2xl">
             <h2 className="text-gold-500 uppercase tracking-[0.3em] text-sm mb-4">Discover</h2>
             <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl">Curated Collections</h3>
           </div>
-          <Link href="/collections" className="group flex items-center gap-4 hover:text-gold-400 transition-colors">
-            <span className="uppercase tracking-widest text-sm">View All</span>
-            <div className="w-12 h-[1px] bg-white group-hover:bg-gold-400 transition-colors relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-r border-t border-current rotate-45" />
-            </div>
-          </Link>
+          <div className="flex justify-center md:justify-end mt-4 md:mt-0">
+            <Link href="/collections" className="text-sm tracking-widest uppercase flex items-center gap-2 hover:text-gold-500 transition-colors border-b border-white/20 pb-1 hover:border-gold-500">
+              View All <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">

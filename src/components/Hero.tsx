@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-gold-500 uppercase tracking-[0.4em] text-sm md:text-base mb-6 font-medium"
+          className="hidden md:block text-gold-500 uppercase tracking-[0.4em] text-sm md:text-base mb-6 font-medium"
         >
           The Epitome of Elegance
         </motion.p>

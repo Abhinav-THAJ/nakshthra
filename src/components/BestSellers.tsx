@@ -46,12 +46,12 @@ export default function BestSellers() {
     <section className="py-24 bg-[#050505] text-ivory border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 md:gap-8 text-center md:text-left">
           <div>
             <h2 className="text-gold-500 uppercase tracking-[0.3em] text-sm mb-4">Most Desired</h2>
             <h3 className="font-heading text-4xl md:text-5xl">Best Sellers</h3>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex justify-center md:justify-end mt-4 md:mt-0">
             <Link href="/shop" className="text-sm tracking-widest uppercase flex items-center gap-2 hover:text-gold-500 transition-colors border-b border-white/20 pb-1 hover:border-gold-500">
               View All <ArrowRight className="w-4 h-4" />
             </Link>
@@ -61,13 +61,13 @@ export default function BestSellers() {
         <div className="-mx-6 px-6">
           <Swiper
             modules={[Navigation, FreeMode]}
-            spaceBetween={32}
-            slidesPerView={1.2}
+            spaceBetween={24}
+            slidesPerView={1.5}
             freeMode={true}
             breakpoints={{
-              640: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 3.2 },
-              1280: { slidesPerView: 4 },
+              480: { slidesPerView: 2.2 },
+              768: { slidesPerView: 3.2 },
+              1024: { slidesPerView: 4 },
             }}
             className="!pb-12"
           >
@@ -96,8 +96,8 @@ export default function BestSellers() {
                     </div>
                   </div>
                   
-                  <div className="text-center px-4">
-                    <h4 className="font-heading text-lg mb-2 group-hover:text-gold-400 transition-colors">{product.name}</h4>
+                  <div className="text-left mt-4">
+                    <h4 className="font-heading text-lg mb-2 group-hover:text-gold-400 transition-colors truncate">{product.name}</h4>
                     <p className="text-gray-400 text-sm tracking-widest">{product.price}</p>
                   </div>
                 </Link>

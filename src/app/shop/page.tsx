@@ -63,6 +63,7 @@ const materials = ["22K Yellow Gold", "18K Rose Gold", "Platinum"];
 export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Jewelry");
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   const toggleMaterial = (mat: string) => {
     setSelectedMaterials(prev => 
@@ -105,8 +106,17 @@ export default function ShopPage() {
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
             
-            {/* Sidebar Desktop */}
-            <aside className="hidden lg:block w-64 flex-shrink-0">
+            {/* Mobile Filter Toggle */}
+            <button 
+              onClick={() => setIsMobileFiltersOpen(!isMobileFiltersOpen)} 
+              className="lg:hidden w-full flex items-center justify-between text-xs uppercase tracking-widest text-ivory border border-white/20 px-6 py-4 mb-4 hover:bg-white/5 transition-colors"
+            >
+              <span>{isMobileFiltersOpen ? "Hide Filters" : "Show Filters"}</span>
+              <ChevronDown className={`w-4 h-4 transition-transform ${isMobileFiltersOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* Sidebar */}
+            <aside className={`${isMobileFiltersOpen ? 'block' : 'hidden'} lg:block w-full lg:w-64 flex-shrink-0 mb-12 lg:mb-0`}>
               <div className="space-y-12">
                 <div>
                   <h3 className="font-heading text-xl text-ivory mb-6">Categories</h3>
